@@ -2,7 +2,7 @@ Challenge::Application.routes.draw do
   
   resources :papers
 
-  root "home#index"
+  root "papers#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

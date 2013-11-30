@@ -4,6 +4,15 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
+    require "rexml/document"
+    require "net/http"
+    xml_data = Net::HTTP.get_response(URI.parse("http://aclweb.org/anthology/N/N12/N12.xml")).body
+    doc = REXML::Document.new xml_data
+    doc.elements.each("volume/paper") do |paper| 
+      paper.elements.each("title") do |t|
+        puts t.text
+      end
+    end
     @papers = Paper.all
   end
 

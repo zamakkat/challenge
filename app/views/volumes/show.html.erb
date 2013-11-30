@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @volume.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @volume.year %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @volume.address %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @volume.publisher %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @volume.url %>
+</p>
+
+<%= link_to 'Edit', edit_volume_path(@volume) %> |
+<%= link_to 'Back', volumes_path %>

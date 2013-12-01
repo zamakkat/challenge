@@ -3,8 +3,8 @@ Challenge::Application.routes.draw do
   resources :authors
 
   resources :volumes
-
   resources :papers
+  
 
   root "papers#index"
 

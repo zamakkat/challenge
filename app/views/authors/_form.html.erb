@@ -1,25 +1,20 @@
-<%= form_for(@author) do |f| %>
-  <% if @author.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
-
-      <ul>
-      <% @author.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @author, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :Firstname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Firstname, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Lastname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Lastname, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :Firstname %><br>
-    <%= f.text_field :Firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :Lastname %><br>
-    <%= f.text_field :Lastname %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                authors_path, :class => 'btn' %>
   </div>
 <% end %>

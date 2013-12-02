@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
     # Read the volume id in the root tag
     @volume = Volume.new
-    @volume.volume_id = doc.attributes["id"]
+    #@volume.volume_id = doc.attributes["id"]
     vol = doc.elements[1]
     @volume.title = vol.elements[1].text
     i = 2
@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
     @paper = Paper.new
     (2..doc.size).each do |i|
       if doc.elements[i] != nil
-        @paper.volume_id = doc.attributes["id"]
+        #@paper.volume_id = doc.attributes["id"]
         p = doc.elements[i]
         @paper.paper_id = p.attributes["id"]
         @paper.title = p.elements[1].text

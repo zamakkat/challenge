@@ -10,7 +10,24 @@
 
 <div class="container">
 	<h1>ACL Digital library</h1>
-  	<%= yield %>     
+
+	<!--<%= form_tag do %>
+		<div class="control-group">
+		    <div class="controls">
+				<%= label_tag(:file, "Choose file: ") %>
+				<%= text_field_tag(:file) %>
+		    </div>
+		 </div>
+
+		 <div class="form-actions">
+
+		 	<%= submit_tag("Search", :class => 'btn btn-primary', :action => "parse", :params => :file) %>
+		 </div>
+	<% end %>-->
+	<% parser("http://aclweb.org/anthology/N/N12/N12.xml") %>
+	<% parser("http://aclweb.org/anthology/D/D13/D13.xml") %>
+  	<%= yield %>
+
 </div>
 
 </body>

@@ -4,15 +4,6 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    require "rexml/document"
-    require "net/http"
-    xml_data = Net::HTTP.get_response(URI.parse("http://aclweb.org/anthology/N/N12/N12.xml")).body
-    doc = REXML::Document.new xml_data
-    doc.elements.each("volume/paper") do |paper| 
-      paper.elements.each("title") do |t|
-        puts t.text
-      end
-    end
     @papers = Paper.all
   end
 
@@ -78,6 +69,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :month, :year, :address, :publisher, :url)
+      params.require(:paper).permit(:volume_id, :paper_id, :title, :month, :year, :address, :publisher, :pages, :url, :bibtype, :bibkey)
     end
 end

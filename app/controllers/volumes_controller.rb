@@ -1,6 +1,6 @@
 class VolumesController < ApplicationController
   before_action :set_volume, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /volumes
   # GET /volumes.json
   def index
@@ -69,6 +69,6 @@ class VolumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volume_params
-      params.require(:volume).permit(:month, :year, :address, :publisher, :url)
+      params.require(:volume).permit(:volume_id, :month, :year, :address, :publisher, :url, :bibtype, :bibkey)
     end
 end

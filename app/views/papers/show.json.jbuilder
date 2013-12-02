@@ -1,1 +1,1 @@
-json.extract! @paper, :title, :month, :year, :address, :publisher, :url, :created_at, :updated_at
+json.extract! @paper, :volume_id, :paper_id, :title, :month, :year, :address, :publisher, :pages, :url, :bibtype, :bibkey, :created_at, :updated_at

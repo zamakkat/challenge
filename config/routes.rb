@@ -2,11 +2,14 @@ Challenge::Application.routes.draw do
   
   resources :authors
 
-  resources :volumes
-  resources :papers
+  #resources :papers
+
+  resources :volumes do 
+    resources :papers
+  end
   
 
-  root "papers#index"
+  root "volumes#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

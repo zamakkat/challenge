@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
     @paper = Paper.new
     (2..doc.size).each do |i|
       if doc.elements[i] != nil
-        #@paper.volume_id = doc.attributes["id"]
+        @paper.volume_id = doc.attributes["id"]
         p = doc.elements[i]
         @paper.paper_id = p.attributes["id"]
         @paper.title = p.elements[1].text
